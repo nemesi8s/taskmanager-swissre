@@ -15,13 +15,4 @@ class FifoTaskManager : TaskManager {
         }
         tasks.add(process)
     }
-
-    override fun killAll() {
-        val processesToRemove: MutableList<Process> = arrayListOf()
-        tasks.forEach {
-            it.kill()
-            processesToRemove.add(it)
-        }
-        tasks.removeAll(processesToRemove)
-    }
 }
